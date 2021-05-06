@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>Climate Change Survey</title>
+    <meta charset="UTF-8">
+	<link href="reset.css" rel="stylesheet" />
+	<link href="style.css" rel="stylesheet" />
+    <script src="inscript.js"></script>
+</head>
+<body>
+
+<!-- HERO IMAGE LANDING PAGE-->
+    <div class='hero-image'>
+        <div class='hero-text'>
+            <h1>Climate Change Survey</h1>
+            <button id="begin" onClick="document.getElementById('scrollTo').scrollIntoView();">Participate</button>
+        </div>
+    </div>
+
+
+<div id="scrollTo"></div>
+<!--MAIN CONTENT, BELOW HERO IMAGE-->
+    <div class='mainContent'>
+        <h2>Collecting data about attitudes toward climate change</h2>
+        <div class="wrapper">
+        <form id="survey" action="responses.html" onsubmit="return attemptSubmit()">
+            <h3>Demographic details</h3>
+            <div class="questions">
+                <label for="suburb"><h4>Suburb</h4></label>
+                <input type="text" id="suburb" name="suburb"><br>
+                <br>
+                <h4>Gender</h4>
+                <input type="radio" id="male" name="gender" value="Male">
+                <label for="male">Male</label><br>
+
+                <input type="radio" id="female" name="gender" value="Female">
+                <label for="female">Female</label><br>
+
+                <input type="radio" id="other" name="gender" value="Unspecified">
+                <label for="other">Unspecified</label><br>
+                <br>
+                <label for="age"><h4>Age</h4></label>
+                <select size="1" id="age" name="age">
+                    <option value="Under 15">< 15</option>
+                    <option value="15-18">15-18</option>
+                    <option value="19-25">19-25</option>
+                    <option value="26-35">26-35</option>
+                    <option value="35-50">36-50</option>
+                    <option value="Over 50">>50</option>
+                </select>
+                <br>
+                </div>
+
+            <br>
+            <h3>Awareness of climate change</h3>
+            <div class="questions">
+                <h4>Have you heard of climate change?</h4>
+                <input type="radio" id="yesheard" name="heard" value="Yes" onclick="showRemainder()">
+                <label for="yes">Yes</label><br>
+
+                <input type="radio" id="notheard" name="heard" value="No" onclick="hideRemainder()">
+                <label for="no">No</label><br>
+            </div>
+<div id="remQuestions">
+            <div class="questions">
+                <div id="sources">
+                    <h4>Please tick all that apply</h4>
+                    <input type="checkbox" id="news" name="source" value=" News Media">
+                    <label for="news">I've heard about it through news media</label><br>
+
+                    <input type="checkbox" id="friend" name="source" value=" Friends or Family">
+                    <label for="friend">I've heard friends or family discuss it</label><br>
+
+                    <input type="checkbox" id="socmed" name="source" value=" Social Media">
+                    <label for="socmed">I've heard about it through social media</label><br>
+
+                    <input type="checkbox" id="research" name="source" value=" Personal Research">
+                    <label for="research">I've personally researched it</label><br>
+
+                    <input type="checkbox" id="taught" name="source" value=" Education">
+                    <label for="taught">I have been taught about it</label><br>
+
+                    <input type="checkbox" id="other" name="source" value=" Other">
+                    <label for="other">Other</label><br>
+                </div>
+                <br>
+            </div>
+
+            <br>
+            <h3>Opinions on climate change</h3>
+            <div class="questions">
+                <h4>Do you think climate change is real?</h4>
+                <input type="radio" id="yesReal" name="real" value="Yes">
+                <label for="yes">Yes</label><br>
+
+                <input type="radio" id="notReal" name="real" value="No">
+                <label for="no">No</label><br>
+
+                <label for="realReason"><h4>Why/Why Not?</h4></label>
+                <textarea id="realReason" name="realReason"></textarea><br>
+
+                <label for="interest"><h4>How interested are you in the topic of climate change?</h4></label>
+                <select size="1" id="interested" name="interested">
+                    <option value="not at all">Not at all interested</option>
+                    <option value="minimally">Minimally interested</option>
+                    <option value="somewhat">Somewhat interested</option>
+                    <option value="fairly">Fairly interested</option>
+                    <option value="extremely">Extremely interested</option>
+                </select>
+
+                <label for="compelling"><h4>How compelling do you find the scientific evidence?</h4></label>
+                <select size="1" id="compelling" name="compelling">
+                    <option value="not at all">Not at all compelling</option>
+                    <option value="minimally">Minimally compelling</option>
+                    <option value="somewhat">Somewhat compelling</option>
+                    <option value="fairly">Fairly compelling</option>
+                    <option value="extremely">Extremely compelling</option>
+                </select>
+            </div>
+
+            <h4>How much is the government investing into climate change?</h4>
+            <input type="radio" id="much" name="gov" value="too much">
+            <label for="yes">Too much</label><br>
+
+            <input type="radio" id="right" name="gov" value="the right amount">
+            <label for="no">About the right amount</label><br>
+
+            <input type="radio" id="little" name="gov" value="too little">
+            <label for="no">Too little</label><br>
+
+</div>
+
+
+            <div class=btnGroup>
+                <button type="submit">Submit</button>
+                <button type="reset" onclick="hideOnClear()">Clear</button>
+            </div>
+            <br>
+            <div id="failed" class="banner">Form incomplete</div>
+
+        </form>
+        </div>
+
+
+    </div>
+
+
+	<!-- FOOTER -->
+	<footer>
+		<span>
+            A 2020 S1 assignment for OLET1309.
+        </span>
+        <span>
+            480423142 MAY 2020.
+        </span>
+
+	</footer>
+</body>
+</html>
